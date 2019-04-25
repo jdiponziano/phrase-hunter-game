@@ -6,7 +6,9 @@ class Game {
   }
 
   startGame() {
-
+    const phrase = this.getRandomPhrase;
+    this.activePhrase = phrase;
+    phrase.addToDisplay;
   }
 
   getRandomPhrase() {
@@ -24,7 +26,7 @@ class Game {
   checkForWin() {
 
   }
-  
+
   gameOver() {
 
   }
