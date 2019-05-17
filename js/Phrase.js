@@ -3,14 +3,14 @@ class Phrase {
     this.phrase = phrase.toLowerCase();
   }
 
-/**
- * Creates <li> for each letter and appends it to the page
- */
+  /**
+   * Display phrase on game board
+   */
   addPhraseToDisplay() {
     const phraseContainer = document.getElementById('phrase');
     const characters = this.phrase.split("");
     const list = '';
-    characters.forEach(function(char) {
+    characters.forEach(function (char) {
       console.log(char);
       if (char.match(/^[A-Za-z]+$/)) {
         list += '<li class="hide letter ' + char + '">' + char + '</li>';
