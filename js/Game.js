@@ -27,8 +27,14 @@ class Game {
     phrase.addToDisplay;
   }
 
+  /**
+  * Selects random phrase from phrases property
+  * @return {Object} Phrase object chosen to be used
+  */
   getRandomPhrase() {
+    const num = Math.floor(Math.random() * Math.floor(4));
 
+    return this.phrases[num];
   }
 
   handleInteraction() {
