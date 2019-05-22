@@ -50,8 +50,18 @@ class Game {
 
   }
 
+  /**
+  * Checks for winning move
+  * @return {boolean} True if game has been won, false if game wasn't
+  won
+  */
   checkForWin() {
-
+    const hiddenLetters = document.querySelectorAll('.hide');
+    if (hiddenLetters.length > 0) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
   gameOver() {
