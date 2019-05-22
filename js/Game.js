@@ -56,8 +56,7 @@ class Game {
     lives[this.missed].querySelector('img').src = 'images/lostHeart.png';
     this.missed += 1;
     if (this.missed === 5) {
-      game.gameOver();
-      console.log('gameover');
+      game.gameOver(false);
     }
   }
 
