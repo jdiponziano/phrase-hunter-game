@@ -97,7 +97,7 @@ class Game {
     const keys = document.querySelectorAll('.key');
     const lives = document.querySelectorAll('.tries');
     overlay.style.display = "flex";
-    overlay.classList.remove('start');
+    overlay.classList = '';
 
     if (gameWon) {
       overlay.classList.add('win');
