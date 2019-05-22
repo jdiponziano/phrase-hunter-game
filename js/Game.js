@@ -46,14 +46,24 @@ class Game {
 
   }
 
+  /**
+  * Increases the value of the missed property
+  * Removes a life from the scoreboard
+  * Checks if player has remaining lives and ends game if player is out
+  */
   removeLife() {
-
+    const lives = document.querySelectorAll('.tries');
+    lives[this.missed].querySelector('img').src = 'images/lostHeart.png';
+    this.missed += 1;
+    if (this.missed === 5) {
+      game.gameOver();
+      console.log('gameover');
+    }
   }
 
   /**
   * Checks for winning move
-  * @return {boolean} True if game has been won, false if game wasn't
-  won
+  * @return {boolean} True if game has been won, false if game wasn't won
   */
   checkForWin() {
     const hiddenLetters = document.querySelectorAll('.hide');
