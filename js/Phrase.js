@@ -25,8 +25,19 @@ class Phrase {
     })
   }
 
-  checkLetter() {
-
+  /**
+  * Checks if passed letter is in phrase
+  * @param (string) letter - Letter to check
+  */
+  checkLetter(letter) {
+    const phrase = this.phrase;
+    for (let i = 0; i < phrase.length; i++) {
+      if (letter === phrase[i]) {
+        return true;
+      } else {
+        return false;
+      };
+    }
   }
 
   showMatchedLetter() {
