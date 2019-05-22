@@ -53,6 +53,7 @@ class Phrase {
         char.classList.remove('hide');
         char.classList.add('show');
       });
+      game.checkForWin();
     }
   }
 }
