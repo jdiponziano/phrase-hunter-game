@@ -69,7 +69,7 @@ class Game {
     if (hiddenLetters.length > 0) {
       return false;
     } else {
-      return true;
+      game.gameOver(true);
     }
   }
 
