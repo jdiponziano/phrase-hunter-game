@@ -43,13 +43,12 @@ class Phrase {
   * @param (string) letter - Letter to display
   */
   showMatchedLetter(letter) {
-    if (this.checkLetter(letter)) {
-      let matches = document.querySelectorAll(`.${letter}`);
-      matches.forEach((char) => {
-        char.classList.remove('hide');
-        char.classList.add('show');
-      });
-      game.checkForWin();
-    }
+
+    let matches = document.querySelectorAll(`.${letter}`);
+    matches.forEach((char) => {
+      char.classList.remove('hide');
+      char.classList.add('show');
+    });
+    game.checkForWin();
   }
 }
