@@ -42,8 +42,21 @@ class Game {
     return this.phrases[num];
   }
 
-  handleInteraction(letter) {
-
+  /**
+  * Handles onscreen keyboard button clicks
+  * @param (HTMLButtonElement) button - The clicked button element
+  */
+  handleInteraction(button) {
+    const letter = button.textContent;
+    button.setAttribute('disabled', '');
+    if (this.activePhrase.checkLetter(letter)) {
+      this.activePhrase.showMatchedLetter(letter);
+      button.classList.add('chosen');
+      this.checkForWin();
+    } else {
+      button.classList.add('wrong');
+      this.removeLife();
+    }
   }
 
   /**
