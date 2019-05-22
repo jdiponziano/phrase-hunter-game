@@ -34,8 +34,6 @@ class Phrase {
     for (let i = 0; i < phrase.length; i++) {
       if (letter === phrase[i]) {
         return true;
-      } else {
-        return false;
       };
     }
   }
@@ -46,9 +44,8 @@ class Phrase {
   */
   showMatchedLetter(letter) {
     if (this.checkLetter(letter)) {
-      const matches = document.querySelectorAll(`.${letter}`);
+      let matches = document.querySelectorAll(`.${letter}`);
       matches.forEach((char) => {
-        console.log(char);
         char.classList.remove('hide');
         char.classList.add('show');
       });
