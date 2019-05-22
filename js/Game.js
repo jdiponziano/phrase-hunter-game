@@ -28,7 +28,7 @@ class Game {
     const overlay = document.getElementById('overlay');
     const phrase = this.getRandomPhrase();
     this.activePhrase = phrase;
-    phrase.addToDisplay;
+    phrase.addPhraseToDisplay();
     overlay.style.display = "none";
   }
 
@@ -42,7 +42,7 @@ class Game {
     return this.phrases[num];
   }
 
-  handleInteraction() {
+  handleInteraction(letter) {
 
   }
 
