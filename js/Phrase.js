@@ -14,7 +14,7 @@ class Phrase {
       let character = document.createElement('li');
 
       if (char.match(/^[A-Za-z]+$/)) {
-        character.classList.add('hide', 'letter', char);
+        character.classList.add('letter', char);
         character.innerHTML = char;
       } else {
         character.setAttribute('class', 'space');
@@ -40,7 +40,18 @@ class Phrase {
     }
   }
 
-  showMatchedLetter() {
-
+  /**
+  * Displays passed letter on screen after a match is found
+  * @param (string) letter - Letter to display
+  */
+  showMatchedLetter(letter) {
+    console.log(this.checkLetter(letter));
+    if (this.checkLetter(letter)) {
+      const matches = document.querySelectorAll(`.${letter}`);
+      matches.forEach((char) => {
+        console.log(char);
+        char.classList.add('show');
+      });
+    }
   }
 }
