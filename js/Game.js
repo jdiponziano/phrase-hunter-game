@@ -21,10 +21,15 @@ class Game {
     return phrases;
   };
 
+  /**
+  * Begins game by selecting a random phrase and displaying it to user
+  */
   startGame() {
-    const phrase = this.getRandomPhrase;
+    const overlay = document.getElementById('overlay');
+    const phrase = this.getRandomPhrase();
     this.activePhrase = phrase;
     phrase.addToDisplay;
+    overlay.style.display = "none";
   }
 
   /**
