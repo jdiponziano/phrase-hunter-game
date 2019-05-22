@@ -45,7 +45,6 @@ class Phrase {
   * @param (string) letter - Letter to display
   */
   showMatchedLetter(letter) {
-    console.log(this.checkLetter(letter));
     if (this.checkLetter(letter)) {
       const matches = document.querySelectorAll(`.${letter}`);
       matches.forEach((char) => {
