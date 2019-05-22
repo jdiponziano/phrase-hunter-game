@@ -93,8 +93,12 @@ class Game {
   gameOver(gameWon) {
     const overlay = document.getElementById('overlay');
     const message = document.getElementById('game-over-message');
+    const letters = document.querySelectorAll('#phrase li');
+    const keys = document.querySelectorAll('.key');
+    const lives = document.querySelectorAll('.tries');
     overlay.style.display = "flex";
     overlay.classList.remove('start');
+
     if (gameWon) {
       overlay.classList.add('win');
       message.innerHTML = 'Congrats! You Won!';
@@ -102,5 +106,18 @@ class Game {
       overlay.classList.add('lose');
       message.innerHTML = 'Aw shucks you lost, maybe next time! Play again?';
     }
+
+    letters.forEach(function (letter) {
+      letter.remove();
+    });
+
+    keys.forEach(function (key) {
+      key.classList = 'key';
+      key.removeAttribute('disabled');
+    });
+
+    lives.forEach(function (life) {
+      life.querySelector('img').src = 'images/liveHeart.png'
+    })
   }
 }
