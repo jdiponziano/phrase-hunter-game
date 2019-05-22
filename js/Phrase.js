@@ -14,7 +14,7 @@ class Phrase {
       let character = document.createElement('li');
 
       if (char.match(/^[A-Za-z]+$/)) {
-        character.classList.add('letter', char);
+        character.classList.add('hide', 'letter', char);
         character.innerHTML = char;
       } else {
         character.setAttribute('class', 'space');
@@ -50,6 +50,7 @@ class Phrase {
       const matches = document.querySelectorAll(`.${letter}`);
       matches.forEach((char) => {
         console.log(char);
+        char.classList.remove('hide');
         char.classList.add('show');
       });
     }
