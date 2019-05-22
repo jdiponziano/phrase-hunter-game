@@ -9,17 +9,20 @@ class Phrase {
   addPhraseToDisplay() {
     const phraseContainer = document.getElementById('phrase');
     const characters = this.phrase.split("");
-    const list = '';
-    characters.forEach(function (char) {
-      console.log(char);
-      if (char.match(/^[A-Za-z]+$/)) {
-        list += '<li class="hide letter ' + char + '">' + char + '</li>';
-      } else {
-        list += '<li class="space">' + char + '</li>';
-      }
-    })
 
-    phraseContainer.firstChild.appendChild(list);
+    characters.forEach(function (char) {
+      let character = document.createElement('li');
+
+      if (char.match(/^[A-Za-z]+$/)) {
+        character.classList.add('hide', 'letter', char);
+        character.innerHTML = char;
+      } else {
+        character.setAttribute('class', 'space');
+        character.innerHTML = char;
+      }
+
+      phraseContainer.firstElementChild.appendChild(character);
+    })
   }
 
   checkLetter() {
