@@ -12,7 +12,7 @@ startBtn.addEventListener('click', () => {
 
 keyboardBtns.forEach((key) => {
   key.addEventListener('click', (evt) => {
-    const letter = evt.target.textContent;
+    const letter = evt.target;
     game.handleInteraction(letter);
   })
 });
