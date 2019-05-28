@@ -16,3 +16,13 @@ keyboardBtns.forEach((key) => {
     game.handleInteraction(letter);
   })
 });
+
+document.addEventListener('keyup', (e) => {
+  const key = e.key;
+  console.log(e);
+  keyboardBtns.forEach((btn) => {
+    if (key === btn.textContent) {
+      game.handleInteraction(btn);
+    }
+  });
+});
