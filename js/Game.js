@@ -107,6 +107,8 @@ class Game {
       message.innerHTML = 'Aw shucks you lost, maybe next time! Play again?';
     }
 
+    this.missed = 0;
+
     letters.forEach(function (letter) {
       letter.remove();
     });
